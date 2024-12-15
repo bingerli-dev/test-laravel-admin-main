@@ -16,5 +16,6 @@ if (env('API_ONLY') !== true) {
 
         $router->get('/', 'HomeController@index')->name('home');
         $router->resource('api-keys', ApiKeyController::class);
+        $router->resource('transaction', TransactionController::class);
     });
 }
