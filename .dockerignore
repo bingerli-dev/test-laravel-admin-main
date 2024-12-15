@@ -1,0 +1,53 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Laravel
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+
+# IDE and Editor files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Storage and Cache
+/storage/*.key
+/storage/app/public/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/bootstrap/cache/*
+
+# Testing
+/tests
+phpunit.xml
+
+# Build assets
+/public/hot
+/public/storage
+
+# Documentation
+*.md
+LICENSE
+
+# Docker
+Dockerfile*
+docker-compose*
+.docker
+
+# GitLab CI
+.gitlab-ci.yml
