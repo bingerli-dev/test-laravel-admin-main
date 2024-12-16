@@ -35,6 +35,52 @@ class TransactionController extends AdminController
         "VIPACCOUNTNO" => "VIP Account Number",
         "XF_MALLID" => "Mall Id",
     ];
+    private $detail_data = [
+        "id" => "ID",
+        "PAYMENT_ID" => "Payment Id",
+        "TRANSACTION_ID" => "Transaction Id",
+        "KDP_SERIAL_NUMER" => "KDP Serial Number",
+        "CRM_ID" => "CRM Id",
+        "XF_STORECODE" => "Store Code",
+        "XF_TXDATE" => "Transaction Date",
+        "XF_DOCNO" => "Document Number",
+        "XF_VIPCODE" => "VIP Code",
+        "XF_AMT" => "Amount",
+        "XF_BONUS" => "Bonus",
+        "XF_REMARK" => "Remark",
+        "XF_SALESMEMOPHOTO" => "Sales Memo Photo",
+        "XF_PAYMETHODCODE" => "Pay Method Code",
+        "XF_CREATETIME" => "Transaction Create Time",
+        "XF_CURRENCYCODE" => "Currency Code",
+        "XF_TXTIME" => "Transaction Time",
+        "XF_GVAMOUNT" => "Gift Voucher Amount",
+        "XF_TRADESOURCES" => "Trade Sources",
+        "XF_TENDERCODE" => "Tender Code",
+        "XF_BANKCARDPHOTO" => "Bank Card Photo",
+        "XF_SALESTIME" => "Sales Time",
+        "XF_REMARK2" => "Remark 2",
+        "XF_ISSUINGBANK" => "Issuing Bank",
+        "XF_VIPGRADE" => "VIP Grade",
+        "ORADOCNO" => "ORA Document Number",
+        "ORAGINAMOUNT" => "ORAGIN Amount",
+        "XF_BATCH_ID" => "Batch Id",
+        "XF_BONUS_EXPIRE_TYPE" => "Bonus Expire Type",
+        "XF_BONUS_EXPIRE_TIME" => "Bonus Expire Time",
+        "Required 0 or 1 `XF_VOIDSTATUS" => "Void Status",
+        "VIPACCOUNTNO" => "VIP Account Number",
+        "COMPLETED_DATE" => "Completed Date",
+        "XF_MALLID" => "Mall Id",
+        "XF_STORENAME" => "Store Name",
+        "XF_STORENAME_SC" => "Store Name SC",
+        "XF_STORENAME_TC" => "Store Name TC",
+        "OCRAPPROVEUPLOADBATCHID" => "OCR Approve Upload Batch Id",
+        "XF_VOIDREASON" => "Void Reason",
+        "PointRegAmt" => "Point Reg Amount",
+        "ServiceChargeAmt" => "Service Charge Amount",
+        "KDorllaerAmt" => "K Dollar Amount",
+        "CouponAmt" => "Coupon Amount",
+        "Campaign" => "Campaign",
+    ];
 
     /**
      * Make a grid builder.
@@ -83,7 +129,7 @@ class TransactionController extends AdminController
     protected function detail($id)
     {
         $show = new Show(K22Transaction::findOrFail($id));
-        foreach ($this->map as $db_key => $view_key) {
+        foreach ($this->detail_data as $db_key => $view_key) {
             $show->field($db_key, __($view_key));
         }
         return $show;
@@ -97,7 +143,7 @@ class TransactionController extends AdminController
     protected function form()
     {
         $form = new Form(new K22Transaction());
-        foreach ($this->map as $db_key => $view_key) {
+        foreach ($this->detail_data as $db_key => $view_key) {
             switch ($db_key) {
                 case "id":
                     break;

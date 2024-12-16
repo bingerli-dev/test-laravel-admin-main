@@ -1,0 +1,13 @@
+.table-no-wrap {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.table-no-wrap table {
+    white-space: nowrap;
+}
+
+.table-no-wrap th,
+.table-no-wrap td {
+    white-space: nowrap;
+}
